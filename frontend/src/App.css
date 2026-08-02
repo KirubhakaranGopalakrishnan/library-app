@@ -1,0 +1,266 @@
+:root {
+  --paper: #f3eee3;
+  --paper-card: #fbf8f1;
+  --ink: #2b2a28;
+  --ink-soft: #5c574d;
+  --spine: #2f4538;
+  --spine-light: #3d5a49;
+  --brass: #b08d57;
+  --stamp-red: #a63d2f;
+  --available: #4c7a5e;
+  --rule: #d8cfba;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.masthead {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--spine);
+  padding-bottom: 24px;
+}
+
+.eyebrow {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 8px;
+}
+
+.masthead h1 {
+  font-family: "Libre Caslon Text", serif;
+  font-size: clamp(36px, 6vw, 56px);
+  margin: 0;
+  color: var(--spine);
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 8px 0 0;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-bar input[type="text"] {
+  flex: 1 1 240px;
+}
+
+.search-bar select {
+  flex: 0 1 160px;
+}
+
+input,
+select {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 15px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper-card);
+  color: var(--ink);
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.add-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--spine);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--spine-light);
+}
+
+.btn-primary:disabled {
+  background: var(--rule);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--spine);
+  border-color: var(--spine);
+}
+
+.btn-ghost:hover {
+  background: var(--spine);
+  color: var(--paper);
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--stamp-red);
+  border: none;
+  padding: 10px 8px;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+.btn-small {
+  padding: 7px 12px;
+  font-size: 13px;
+}
+
+.status-text {
+  text-align: center;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 40px;
+}
+
+.error-banner {
+  background: #f6dfd9;
+  border: 1px solid var(--stamp-red);
+  color: var(--stamp-red);
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.card {
+  position: relative;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 1px 0 var(--rule);
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 14px;
+  height: 8px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.card-out {
+  opacity: 0.92;
+}
+
+.stamp {
+  position: absolute;
+  top: 14px;
+  right: -30px;
+  transform: rotate(18deg);
+  background: transparent;
+  color: var(--stamp-red);
+  border: 2px solid var(--stamp-red);
+  padding: 2px 34px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.card-genre {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 6px 0 6px;
+}
+
+.card-title {
+  font-family: "Libre Caslon Text", serif;
+  font-size: 20px;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.card-author {
+  margin: 0 0 10px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.card-copies {
+  font-size: 13px;
+  color: var(--available);
+  margin: 0 0 14px;
+}
+
+.card-out .card-copies {
+  color: var(--stamp-red);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .search-bar select {
+    flex: 1 1 100%;
+  }
+}
