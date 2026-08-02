@@ -1,4 +1,5 @@
-const BASE = "/api/books";
+// const BASE = "/api/books";
+const BASE = "https://library-app-backend.onrender.com/api/books";
 
 export async function fetchBooks({ q, genre, available } = {}) {
   const params = new URLSearchParams();
